@@ -112,23 +112,23 @@
 //  }
 
 
-var obj = {
-    username: '1906A',
-    sum:  ()=> {
-       //this
-       var fn= function() {
+// var obj = {
+//     username: '1906A',
+//     sum:  ()=> {
+//        //this
+//        var fn= function() {
         
-            console.log('obj的this:', this)
-            console.log('obj的arguments:', arguments)
+//             console.log('obj的this:', this)
+//             console.log('obj的arguments:', arguments)
             
-       }
+//        }
         
-        fn();
+//         fn();
 
-    }
-}
+//     }
+// }
 
-obj.sum();
+// obj.sum();
 
 //console.log('箭头函数运算结果：', obj.sum())
 
@@ -139,6 +139,109 @@ obj.sum();
 
 
  // var result = sum(10, 20)
+
+
+ // const
+
+//const pi = 3.1415926;
+//const webpack = require('webpack');
+
+// const obj = {
+//     name: 'alice',
+//     age:20
+// }
+
+// obj = 10;
+
+// console.log(obj)
+
+
+//解构赋值, 赋值=号左右两边的类型要一致
+
+//数组的解构
+//var arr = ['hello', 'vue.js']
+//对象的解构
+// var obj = {
+//     name: 'alice',
+//     age: 20,
+//     address:'北京'
+// }
+
+//var [a, b] = arr;
+//var {name,address } =obj;
+// var name = obj.name;
+// var address = obj.address;
+
+// function getUserinfo() {
+
+//    //ajax数据获取....
+//     var res = { name: 'alice111',
+//                 age: 20,
+//                     address: '中国'
+//                 }
+    
+//     return {
+//         name: res.name,
+//         address: res.address
+//     }
+    
+
+// }
+
+// var { name, address } = getUserinfo()
+
+
+//vuex
+
+//import {mapState,mapAction } from 'vuex'
+    
+
+
+// console.log('a:',a)
+// console.log('b:',b)
+
+
+//模板字符串
+
+// var obj = {
+//     name: 'alice',
+//     age: 20,
+//     address:'北京'
+// }
+
+//原先拼接字符串的方式
+//var msg = "我的姓名叫" + obj.name + "，年龄" + obj.age + "，住址" + obj.address
+
+//用模板字符串渲染
+// var msg = `test:我的名子叫${obj.name},我的年龄${obj.age+10}，住址${obj.address}`
+
+
+// console.log(msg)
+
+//set和map
+
+//定义一个set变量
+var s = new Set();
+
+//添加一个值
+s.add(10);
+s.add(20);
+s.add(30);
+s.add(20);
+
+console.log(s)
+
+
+//定义一个map变量
+var m = new Map();
+
+console.log(m)
+
+
+
+
+
+
 
  
 
