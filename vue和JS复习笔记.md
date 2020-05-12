@@ -287,19 +287,62 @@ function getUserinfo(name='无名',age=0,address='请填写住址') {
 
             3.Promise暴露的API
 
-               .then  
-               .catch
-               .all
-               .finally
-               .race
+  - .then(函数1，函数2)  
+               
+                  函数1：表示成功返回
+                  函数2：代表失败返回
+
+            例如：
+
+            promise.then(function(value) {
+                   // success
+            }, function(error) {
+                // failure
+            });
+
+      - .catch：失败处理
+
+         ajax(url,'GET')
+            //通常成功返回的处理
+            .then(res=>{
+               console.log('获取数据：：',res)
+            })
+            //失败处理
+            .catch(error=>{
+               console.log('失败的处理',error)
+            })
+
+      .all：主要用于同时处理多个接口的请求时使用，只有多个接口同时成功返回时才可以
+
+
+        Promise.all([p1(),p2()])
+               .then(result=>{
+                  //其中result返回的是一个数组
+                  console.log('result:',result);
+         });
+
+
+      .finally：无论成功和失败，都会被执行
+
+      .race：请求多个接口时，只要有一个状态改变，就会提前返回
+
+
+    Promise.race([p2(),p1()])
+         .then(result=>{
+
+             console.log('result:',result);
+        
+   })
+        
+
 ```
 
  //完整版本：ajax封装
-export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
+function ajax(url = '', data = {}, type = 'GET', method = 'fetch') => {
 	type = type.toUpperCase();
 	url = baseUrl + url;
 
-	if (type == 'GET') {
+	if (type == 'GET') {   //?id=1001&name=alice  {id:1001,name:'alice'}
 		let dataStr = ''; //数据拼接字符串
 		Object.keys(data).forEach(key => {
 			dataStr += key + '=' + data[key] + '&';
@@ -374,16 +417,37 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 ```
 
 
+     4. async/await：发布时间：ES2017 
 
-         4. async/await
+      注：号称是目前最棒的异步解决方案，没有之一
+      特点：
 
-          
+```
+ * 1.async必须写在function前面，告诉用户这是一个异步函数
+ * 2.async异步函数默认返回Promise.resolve() 成功返回
+ * 3.通过async定义的函数，调用时可以通过.then来接收
+ * 4.await表示等待调用或表达式的值，await后面可以接任意类型的值，但通常接一个promise
+ * 5.await必须定义在一个async函数中，单独使用会报错 
+ * 6.只有能用.then来获取的结果，都可以改写成用await获取结果
+
+```
+
+      面试官可能会问：
+
+        1.说一下前端异步解决有哪些方案 回调，Promise,async/await
+
+        2. async/await了解过吗，怎么用的？
+
+        3. 如何将Promise调用，修成成await/async,或将await/async修改成Promise调用 
+
+       注：setTimeout,Promise.then,setInterval,async/await都是异步执行的
+
 
 
 - 数组和字符串的扩展方法
 - class
 - import,export
-- Prmoise
+
 
 
 

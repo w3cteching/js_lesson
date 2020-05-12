@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ES6复习</h2>
+</body>
+<!--<script src="./js/es6.js"></script>-->
+<script src="./js/ajax.js"></script>
+<script>
+
+let url='https://api.it120.cc/hjl/shop/goods/category/all'
+
+
+async function getData() {
+
+    //获取数据
+  let res=await ajax(url,'GET')
+  
+  // console.log('await获取的分类json:',res)
+  // console.log('加载完毕')
+
+  return res;
+
+
+}
+
+/*
+getData().then(res=>{
+    console.log('ok:',res)
+})
+
+*/
+
+async function test() {
+
+   var result= await getData()
+   console.log('result:::::',result)
+}
+
+test();
+
+
+
+
+</script>
+</html>

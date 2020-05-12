@@ -3,6 +3,7 @@
 let baseUrl="https://api.it120.cc/"  //公共地址，例如：https://api.it120.cc/
 
 //完整版本：ajax封装
+/*
 export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 	type = type.toUpperCase();
 	url = baseUrl + url;
@@ -79,8 +80,8 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 	}
 }
 
+*/
 
-/*
 function ajax(url, method='get', data) {
 
     return new Promise((resolve, reject) => {
@@ -132,5 +133,3 @@ function ajax(url, method='get', data) {
    });
     
 }
-
-*/
