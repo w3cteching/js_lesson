@@ -194,16 +194,122 @@
 
 
 - symbol
+
+   - Symbol是ES2015新增的基本数据类型
+   - 使用Symbol()函数来定义Symbole类型，并可以通过typeof检测并返回Symbole类型
+
+     例如：
+      let s=Symbol()
+      let s2=Symbol('name')
+      typeof s2;
+
+   - 用Symbole定义的类型是唯一的,即定义的两个相同的Symbole比较返回值也是false
+   - 可以用作对象的属性
+
+         var s4=Symbol('age')
+         var obj={
+            username:'张三',
+            [s4]:20
+         }
+
+
+  面试官会问：
+
+   你给我说一下JS数据类型有哪些？
+
+   你给我说一下JS基本数据类型有哪些(6种):number,boolean,string,undefined,null,symbol
+
+   如何检测数据类型：typeof检测
+
+   typeof返回值的类型有：
+
+     1. number,boolean,string,undefined,null,symbol
+     2. function
+     3. Object  
+
+       注意：typeof null或typeof 数组名 也是返回object;
+
+   null和undefined区别？？
+
+   参考：http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html
+
+
+    因为typeof 数组名返回object，不能具体知道类型
+
+    instanceOf不推荐检测对象类型
+
+    检测数组： 
+
+      1. ES5中的Array.isArray()  满足返回true
+
+      2. ES3的方法检测：Object.prototype.toString.call(数组名)
+
+
+
+- 函数的默认参数：通过给函数形参赋值，实现默认值
+
+function getUserinfo(name='无名',age=0,address='请填写住址') {
+
+    console.log(name)
+    console.log(age)
+    console.log(address)
+  
+}
+
+
+
+- generator，迭代器
+
+      异步解决方案：
+
+         1. 回调函数:问题容易产生回地狱的问题，层层嵌套
+         2. generator:
+
+            定义：
+
+            function* 函数名() {
+               yield 'hello';  //通过next暂停返回的值
+               yield 'world';
+               return 'ending';
+            }
+
+            特点：用*和yeild来定义一个generator,通过手动调用next()来访问
+
+         3. Promise【无论做项目，还是面试都是很常见的】
+
+           面试官可能会问：Promise你怎么理解的，在项目中用过没有
+
+            1.Promise是一种为了避免回调地狱的异步解决方案
+            2.Promise是一种状态机：
+            
+                  pending（进行中）、fulfilled（已成功）和rejected（已失败）
+                  只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。
+
+            3.Promise暴露的API
+
+               .then  
+               .catch
+               .all
+               .finally
+               .race
+
+
+
+         4. async/await
+
+          
+
+
 - 数组和字符串的扩展方法
 - class
 - import,export
-- 函数的默认参数
 - Prmoise
-- generator，迭代器
 
 
-  ES6详解：https://es6.ruanyifeng.com/#README
-  ES6常用特性：https://www.cnblogs.com/Wayou/p/es6_new_features.html
+
+  > ES6详解：https://es6.ruanyifeng.com/#README
+  
+  > ES6常用特性：https://www.cnblogs.com/Wayou/p/es6_new_features.html
 
  
 ## typeScript(简称TS)

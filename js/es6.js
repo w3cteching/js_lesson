@@ -221,24 +221,100 @@
 //set和map
 
 //定义一个set变量
-var s = new Set();
+// var s = new Set();
 
-//添加一个值
-s.add(10);
-s.add(20);
-s.add(30);
-s.add(20);
+// //添加一个值
+// s.add(10);
+// s.add(20);
+// s.add(30);
+// s.add(20);
 
-console.log(s)
+// console.log(s)
 
 
 //定义一个map变量
-var m = new Map();
+// var m = new Map();
 
-console.log(m)
+// console.log(m)
+
+//==============5.12=====================
+
+// var count = 10;
+// var str = 'hello'
+ //var test;
+// var flag = true;
+// var timer = null;
+// var s = Symbol();
+
+// console.log(typeof count)
+// console.log(typeof str)
+// console.log(typeof test)
+// console.log(typeof flag)
+// console.log('null:',typeof timer)
+// console.log(typeof s)
+
+// console.log('NaN:', typeof NaN)
+
+// function Fn() {
+
+// }
 
 
+// console.log('Fn:', typeof Fn)
 
+// var arr = [4, 4, 5, 6];
+// console.log('arr:', typeof arr);
+
+
+//封装检测数组的方法
+// function isArray(target) {
+
+//     var flag
+//     if (Array.isArray) { 
+
+//         flag= Array.isArray(target);
+//     }else {
+//         flag= Object.prototype.toString.call(target) === '[object Array]'
+//     }
+
+//     return flag;
+// }
+
+// var arrResult = [3, 4, 5, 67]
+// var a = 10;
+
+// console.log('arrResult:',isArray(arrResult))
+// console.log('a:',isArray(a))
+
+
+//ES2015的默认参数
+
+// function getUserinfo(name='无名', age, address) {
+    
+//    // name = name || '无名'
+
+//     console.log(name)
+//     console.log(age)
+//     console.log(address)
+  
+// }
+
+// getUserinfo();
+
+
+// generator
+
+function* helloWorldGenerator() {
+    yield 'hello';
+    yield 'world';
+    return 'ending';
+  }
+  
+
+  
+  
+//ajax('http://www.badu.com/api', 'get', { })
+//https://api.it120.cc/hjl/shop/goods/category/all
 
 
 

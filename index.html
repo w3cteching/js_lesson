@@ -8,5 +8,15 @@
 <body>
     <h2>ES6复习</h2>
 </body>
-<script src="./js/es6.js"></script>
+<!--<script src="./js/es6.js"></script>-->
+<script src="./js/ajax.js"></script>
+<script>
+let url='https://api.it120.cc/hjl/shop/goods/category/all'
+
+ajax(url,'GET')
+    .then(res=>{
+        console.log('获取数据：：',res)
+    })
+
+</script>
 </html>
