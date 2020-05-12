@@ -6,6 +6,7 @@
  * 3.通过async定义的函数，调用时可以通过.then来接收
  * 4.await表示等待调用或表达式的值，await后面可以接任意类型的值，但通常接一个promise
  * 5.await必须定义在一个async函数中，单独使用会报错 
+ * 6.只有能用.then来获取的结果，都可以改写成用await获取结果
  */
 
 var index = 10;

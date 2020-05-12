@@ -14,7 +14,7 @@
 
 let url='https://api.it120.cc/hjl/shop/goods/category/all'
 
-
+//获取数据函数
 async function getData() {
 
     //获取数据
@@ -35,8 +35,9 @@ getData().then(res=>{
 
 */
 
+//业务代码
 async function test() {
-
+   //await调用getData获取数据方法
    var result= await getData()
    console.log('result:::::',result)
 }

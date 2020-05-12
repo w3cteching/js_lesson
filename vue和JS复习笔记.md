@@ -419,8 +419,9 @@ function ajax(url = '', data = {}, type = 'GET', method = 'fetch') => {
 
      4. async/await：发布时间：ES2017 
 
-      注：号称是目前最棒的异步解决方案，没有之一
-      特点：
+> 注：号称是目前最棒的异步解决方案，没有之一
+
+> 特点：
 
 ```
  * 1.async必须写在function前面，告诉用户这是一个异步函数
@@ -432,7 +433,7 @@ function ajax(url = '', data = {}, type = 'GET', method = 'fetch') => {
 
 ```
 
-      面试官可能会问：
+> 面试官可能会问?
 
         1.说一下前端异步解决有哪些方案 回调，Promise,async/await
 
