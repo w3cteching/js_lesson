@@ -82,7 +82,9 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 
 */
 
-function ajax(url, method='get', data) {
+function ajax(url, method = 'get', data) {
+	
+	//封装promise考虑传参，loading处理，报错处理，toast，header头的处理
 
     return new Promise((resolve, reject) => {
        
@@ -133,3 +135,13 @@ function ajax(url, method='get', data) {
    });
     
 }
+
+ajax().then(
+	//成功返回
+	res => {
+	
+})
+	//报错
+	.catch(error => {
+	 
+ })

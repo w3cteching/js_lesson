@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>类数组和数组</h2>
+</body>
+<script>
+    function test() {
+        //arguments表示接收传递值的类数组
+
+        //通过Array.from将类数组转换成数组,ES6
+        //var arr=Array.from(arguments);
+
+        //不用Array.from,如何将类数组转换成数组, ES3
+
+        var arr=LikeArrayToArray(arguments);
+
+        arr.push('1906A-测试111')
+        console.log('通过arguments接收：',arr)
+
+    }
+
+
+   //封装类数组转换成数组的方法
+    function LikeArrayToArray(target) {
+
+        return Array.prototype.slice.call(target);
+
+    }
+
+    test(5,8);
+
+
+</script>
+</html>

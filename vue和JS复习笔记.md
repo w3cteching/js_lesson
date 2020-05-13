@@ -445,8 +445,128 @@ function ajax(url = '', data = {}, type = 'GET', method = 'fetch') => {
 
 
 
-- 数组和字符串的扩展方法
+- 数组和字符串的扩展方法:
+
+  字符串：主要新增了模板字符串
+
+  数组新增方法：
+
+     Array.from:将类数组或迭代对象转换成数组
+
+      类数组和数组的相同点：
+
+            可以通过下标来访问，并且可以通过.length来获取类数组的元素个数
+
+      类数组和数组的区别： 类数组不能使用数组的各种api方法，数组没有问题
+
+
+> 如何将一个类数组转换成数组？
+
+- 第一种方法：通过ES6的Array.from(类数组)来转换
+
+- 第二种方法：通过Array.prototype.slice.call(类数组);
+
+- 第三种方法: ...来转换类数组
+
+           例如：var newArr=[...类数组名]
+
+      
+  > 类数组通常有哪些呢：arguments,获取的DOM组成的类数组
+
+- copywithin:方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度
+     
+        const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+        console.log(array1.copyWithin(0, 3, 4));
+
+- find():返回匹配的数组元素，没有匹配的返回undefined
+
+- findIndex():返回匹配的数组元素下标，没有匹配的就返回-1
+
+- fill(value,start,end) 填充数据
+
+- keys(), values()，  entries()返回迭代器，必须通过for of来遍历返回
+
+      例如：
+
+      for(let [key,value] of arr.entries()) {
+
+            console.log(`下标为${key},对应的值为${value}`)
+         }
+
+      对象也有类似获取values,keys,entries方法
+
+        Object.values():获取对象的值(即value)
+        Object.keys() ：获取对象的属性（即key）
+        Object.entries() 获取对象的key和value
+
+        var obj={
+         username:'张三',
+         age:20,
+         address:'北京'
+      }
+
+      转换成字符串拼接的形式：
+      let url="http://www.badiu.com/"
+       userinfo='张三'&age=20&address=北京
+
+      var str="";
+      Object.keys(obj).forEach((item,index)=>{
+
+         str+=`${item}=${obj[item]}&`
+
+
+      })
+
+- includes():检测数组中是否含有某一个值 有返回true，没有返回false
+      
+- indexOf() 检测数组中是否有某一个值 有返回下标，没有返回-1
+
+       var arr=[
+           {id:1001,name:'alice',code:1},
+           {id:1001,name:'alice',code:2},
+           {id:1001,name:'alice',code:11},
+           {id:1001,name:'alice',code:15}
+         ]
+         var statusArr=[0,1,2]
+
+         arr.filter((item,index)=>{
+            var flag=false;
+            
+            return statusArr.includes(item.code)
+
+
+         })
+
+
+       
+       flat:数组扁平化  ES2019
+
+         数组扁平化概念：如何将多维数组转换成一维数组的过程
+
+         方法：
+
+           1.toString()
+
+           2.flat转换
+
+            例如： var arr1 = [1, 2, [3, 4]];
+                  arr1.flat(); 
+                  // [1, 2, 3, 4]
+
+                  var arr2 = [1, 2, [3, 4, [5, 6]]];
+                  arr2.flat();
+                  // [1, 2, 3, 4, [5, 6]]
+
+                  var arr3 = [1, 2, [3, 4, [5, 6]]];
+                  arr3.flat(2);
+                  // [1, 2, 3, 4, 5, 6]
+
+
+
+
 - class
+
 - import,export
 
 
