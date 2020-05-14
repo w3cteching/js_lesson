@@ -565,9 +565,85 @@ function ajax(url = '', data = {}, type = 'GET', method = 'fetch') => {
 
 
 
-- class
+- class:类
+
+   1. JavaScript在ES6之前通过函数来模拟一个类（类也称构造函数）
+
+   2. ES6通过class来定义类，不是通过函数，但本质上class就是函数定义类的语法糖
+
+   3. 继承类【高频面试问题】
+
+   4.  ES5继承方式：
+
+      - 原型链继承:
+
+         子类.prototype=new 父类()
+         
+         总结：
+         * 优点：可以方便继承父类的方法
+         * 缺点：不能传参
+
+      - 借用构造函数继承
+
+        function 子类(参数1,参数2,...参数n) {
+
+            父类.call(this,参数1,参数2,...参数n)
+
+        }
+
+      总结：
+         * 优点：传参方便 通过在子类，对父类通过call或apply来向父类传递参数
+         * 缺点：父类的原型上方法是不能继承的
+
+      - 组合继承
+
+        总结：结合了原型链继承和借用构造函数继承优点来实现
+
+   5..原型链的理解
+
+      在当前实例化属性中查找有没有，没有则通过__proto__查找父类的原型
+
+      父类原型有则执行，没有则在通过__proto__再往上查找，查父类的父类的原型
+
+      以此类推...走到查找到null,即为原型链的最顶端
+
 
 - import,export
+
+    - 知道模块化是什么:模块化是实现大型复杂项目开发的核心
+
+    - 模块化规范：AMD,CMD,CommonJS,ES6 module
+       
+      AMD,CMD：是针对浏览器端的异步加载规范
+
+        产出物：require.js,sea.js
+
+      CommonJS：针对服务端同步的加载规范
+
+        产生物：node.js
+
+        语法：
+        
+           抛出：module.exports
+           引入：require('包或定义的文件')
+
+      ES6 module:主要针对浏览器的模块加载规范
+
+         语法：
+
+           抛出：export { } 或export default 
+           引入: import xxx from '文件路径'
+
+      通过script在html页面中加载js模块化的形式，必须通过type='module'指定一下
+
+      例如：
+
+      <script src="./js/main.js" type="module"></script>
+
+
+  
+
+
 
 
 
